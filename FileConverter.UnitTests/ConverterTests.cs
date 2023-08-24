@@ -18,8 +18,8 @@ public class ConverterTests
     {
         ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
         // Arrange
-        var excelFilePath = "C:\\Users\\Korisnik\\Desktop\\FileConverter\\FileConverter\\bin\\Debug\\net6.0\\WorldwideRigCounts.xlsx";
-        var csvFilePath = "C:\\Users\\Korisnik\\Desktop\\FileConverter\\FileConverter\\bin\\Debug\\net6.0\\WorldwideRigCounts.csv";
+        string excelFilePath = Path.Combine(Directory.GetCurrentDirectory(), "WorldwideRigCounts.xlsx");
+        string csvFilePath = Path.Combine(Directory.GetCurrentDirectory(), "WorldwideRigCounts.csv"); ;
 
         // Act
         await converter.ConvertToCsvFIle(excelFilePath);

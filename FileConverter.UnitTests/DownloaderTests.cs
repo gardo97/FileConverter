@@ -23,7 +23,7 @@ public class DownloaderTests
         // Arrange
         string url = "https://bakerhughesrigcount.gcs-web.com/intl-rig-count?c=79687&p=irol-rigcountsintl";
         string htmlContent = "<html><body><a href='/static-files/7240366e-61cc-4acb-89bf-86dc1a0dffe8'>\"Worldwide Rig Counts - Current & Historical Data\"</a></body></html>";
-        string excelFilePath = "C:\\Users\\Korisnik\\Desktop\\FileConverter\\FileConverter.UnitTests\\bin\\Debug\\net6.0\\WorldwideRigCounts.xlsx";
+        string excelFilePath = Path.Combine(Directory.GetCurrentDirectory(), "WorldwideRigCounts.xlsx");
         _mockHttpClient.Setup(mock => mock.GetHtmlContentAsync(It.IsAny<string>())).ReturnsAsync(htmlContent);
         _mockHttpClient.Setup(mock => mock.DownloadBytesAsync(It.IsAny<Uri>())).ReturnsAsync(new byte[0]);
 
